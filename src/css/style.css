@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #434455;
+  background-color: var(--WHITE);
+  margin: 0px;
+}
+
+.search-form {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background-color: #008b8b;
+  position: fixed;
+}
+
+.search-form input {
+  width: 30%;
+  height: 40px;
+  border: 1px solid #ffffff;
+  font-size: 12px;
+  line-height: 1.5em;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  box-shadow: 0px 4px 4px 0px;
+  border-radius: 4px;
+  outline-color: whitesmoke;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+.photo-card {
+  width: 20%;
+  background-color: var(--WHITE);
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.gallery__link {
+  height: 100%;
+}
+
+.itemPhoto {
+  height: 254px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  width: 25%;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.info-item span {
+  margin-top: 10px;
+  width: 100%;
+  display: block;
+}
+
+.divLoad {
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.loadBtn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* loader here */
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 16px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: black;
+  box-shadow: 32px 0 black;
+  top: 20%;
+  left: 50%;
+  animation: ballMoveX 2s linear infinite;
+}
+.loader:after {
+  box-shadow: none;
+  transform: translateX(64px) scale(1);
+  z-index: 2;
+  animation: none;
+  animation: trfLoader 2s linear infinite;
+}
+
+@keyframes trfLoader {
+  0%,
+  5% {
+    transform: translateX(64px) scale(1);
+    background: black;
+  }
+  10% {
+    transform: translateX(64px) scale(1);
+    background: #008b8b;
+  }
+  40% {
+    transform: translateX(32px) scale(1.5);
+    background: #008b8b;
+  }
+  90%,
+  95% {
+    transform: translateX(0px) scale(1);
+    background: #008b8b;
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+    background: black;
+  }
+}
+@keyframes ballMoveX {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  90%,
+  100% {
+    transform: translateX(32px);
+  }
+}
